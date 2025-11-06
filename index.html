@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurum Nest Properties Ltd</title>
+  <style>
+    body {margin:0; font-family:'Poppins', sans-serif; background-color:#000; color:#fff;}
+    header {display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:#000; position:sticky; top:0; z-index:100;}
+    header a {color:#d4af37; text-decoration:none; margin:0 15px; font-weight:500;}
+    header a:hover {color:#fff;}
+    .hero {background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat; height:80vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:#fff; position:relative;}
+    .hero::after {content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6);}
+    .hero h1, .hero p {position:relative; z-index:2;}
+    .hero h1 {font-size:3em; color:#d4af37; margin-bottom:10px;}
+    .btn {background:#d4af37; color:#000; padding:12px 30px; border:none; border-radius:30px; font-weight:600; cursor:pointer; transition:0.3s;}
+    .btn:hover {background:#fff;}
+    section {padding:80px 10%;}
+    h2 {color:#d4af37; margin-bottom:20px;}
+    .about {display:flex; gap:40px; flex-wrap:wrap; align-items:center;}
+    .about img {width:45%; border-radius:10px;}
+    .about div {flex:1;}
+    .three-cols {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; text-align:center;}
+    .three-cols div {background:#111; padding:30px; border-radius:10px;}
+    .investments {display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:30px;}
+    .card {background:#111; padding:30px; border-radius:10px;}
+    .testimonials {background:#111;}
+    .testimonial {margin-bottom:30px; font-style:italic;}
+    .contact form {display:flex; flex-direction:column; gap:15px; max-width:500px;}
+    input, textarea {padding:10px; border:none; border-radius:5px;}
+    footer {text-align:center; padding:40px 20px; border-top:1px solid #222; color:#d4af37; font-size:0.9em;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="color:#d4af37;">Aurum Nest Properties</h1>
+    <nav>
+      <a href="#about">About Us</a>
+      <a href="#approach">Our Approach</a>
+      <a href="#invest">Investor Opportunities</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Building wealth through property — together.</h1>
+    <p>At Aurum Nest Properties, we turn potential into performance through smart, ethical property investments across the North West.</p>
+    <button class="btn">Learn More</button>
+  </section>
+
+  <section id="about">
+    <h2>Meet the Team Behind Aurum Nest Properties</h2>
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Team photo">
+      <div>
+        <p>We’re Severine and Mike, the husband-and-wife team behind Aurum Nest Properties Ltd.</p>
+        <p>Operating throughout the North West, we’re passionate about creating new opportunities and revitalising communities through property.</p>
+        <p>With Mike’s MBA and years of strategic business experience, combined with Severine’s award-winning customer service, we’ve built a company that values transparency, trust, and long-term partnerships.</p>
+        <p>Our mission is simple: to create profitable and stress-free property investment opportunities that benefit everyone involved.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" style="background:#111;">
+    <h2>How We Work</h2>
+    <div class="three-cols">
+      <div><h3>Identify Opportunities</h3><p>We source high-potential properties — often off-market — through trusted relationships and local expertise in the North West region.</p></div>
+      <div><h3>Add Value</h3><p>From light refurbishments to complete transformations, we enhance both the property and its profitability.</p></div>
+      <div><h3>Share Success</h3><p>We structure deals that provide secure, attractive returns for our investors.</p></div>
+    </div>
+  </section>
+
+  <section id="invest">
+    <h2>Partner with Us</h2>
+    <p>Your money should work as hard as you do.</p>
+    <div class="investments">
+      <div class="card"><h3>Fixed Return Loans</h3><p>Short to mid-term projects with guaranteed interest.</p></div>
+      <div class="card"><h3>Joint Venture Partnerships</h3><p>Share in profits on high-value projects.</p></div>
+      <div class="card"><h3>Portfolio Growth</h3><p>Long-term strategies for sustained wealth building.</p></div>
+    </div>
+    <button class="btn" style="margin-top:30px;">Book a Discovery Call</button>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Investors Say</h2>
+    <div class="testimonial">“Aurum Nest are trustworthy, transparent and deliver on their promises.” – Investor, Cheshire</div>
+    <div class="testimonial">“Severine and Mike made the whole process smooth and professional from day one.” – Investor, Manchester</div>
+  </section>
+
+  <section id="contact">
+    <h2>Let’s Talk Property</h2>
+    <p>We’d love to hear from you. Whether you’re curious about partnering with us or just want to learn more, get in touch today.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Your Phone">
+      <textarea placeholder="Your Message" rows="5"></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Aurum Nest Properties Ltd. All Rights Reserved.</p>
+    <p>Operating across the North West of England</p>
+    <p>Registered in England & Wales | Company No. XXXXXXXX</p>
+    <p>Follow us: 🏠 💼 📸</p>
+  </footer>
+</body>
+</html>
