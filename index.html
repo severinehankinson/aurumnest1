@@ -20,8 +20,8 @@
     h2 {color:#d4af37; margin-bottom:20px;}
     .about {display:flex; gap:40px; flex-wrap:wrap; align-items:center;}
     .about img {
-  width: 50%;
-  max-width: 100px;
+  width: 100%;
+  max-width: 280px;
   border-radius: 10px;
   height: auto;
 }
@@ -32,13 +32,24 @@
     .card {background:#111; padding:30px; border-radius:10px;}
     .testimonials {background:#111;}
     .testimonial {margin-bottom:30px; font-style:italic;}
-    .contact form {display:flex; flex-direction:column; gap:15px; max-width:500px;}
-   input, textarea {
+    .contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 3000px;  /* make form narrower */
+  margin: 0 auto;    /* center the form */
+}
+  input, textarea {
   padding: 10px;
   border: none;
   border-radius: 5px;
   width: 100%;
   box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1em;
+  display: block;
+  background-color: #222;  /* dark background to match brand */
+  color: #fffff;             /* text color white for contrast */
 }
     footer {text-align:center; padding:40px 20px; border-top:1px solid #222; color:#d4af37; font-size:0.9em;}
   </style>
@@ -65,7 +76,7 @@
     <div class="about-text">
       <h2>Meet Severine & Mike</h2>
       <p><strong>Aurum Nest Properties Ltd</strong> is a family-run property business specialising in sourcing, improving and trading residential properties across the North West. We focus on transparency, strong returns and excellent service.</p>
-      <p>Mike holds a MBA and provides strategic business and financial oversight. Severine is an award-winning customer service professional who ensures investor relations are personal and reliable.</p>
+      <p>Mike holds an MBA and provides strategic business and financial oversight. Severine is an award-winning customer service professional who ensures investor relations are personal and reliable.</p>
       <p>We welcome both experienced investors and those new to property — we structure each opportunity to match risk appetite and return goals.</p>
     </div>
     <img src="team1.jpg" alt="Severine and Mike - Aurum Nest Properties">
@@ -117,7 +128,5 @@
   </footer>
 </body>
 </html>
-
-
 
 
