@@ -105,6 +105,36 @@
   </style>
 </head>
 <body>
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" style="
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#111;
+  color:#fff;
+  padding:15px 20px;
+  text-align:center;
+  font-family:'Poppins', sans-serif;
+  z-index:10000;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+">
+  This website uses cookies to ensure you get the best experience.
+  <button id="accept-cookies" style="
+    padding:8px 20px;
+    border:none;
+    border-radius:30px;
+    background: linear-gradient(135deg, #cdaa2c 0%, #d4af37 40%, #f7e28c 60%, #b6862f 100%);
+    color:#000;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.3s ease;
+  ">Accept</button>
+</div>
+
   <header>
     <a href="#"><img src="logo.png" alt="Aurum Nest Properties Logo" style="height:150px; border-radius:8px;"></a>
     <nav>
@@ -189,5 +219,31 @@
     <p>Registered in England & Wales | Company No. 16764386</p>
     <p>Follow us: 🏠 💼 📸</p>
   </footer>
+<script>
+// Set a cookie
+function setCookie(name, value, days) {
+  let expires = "";
+  if (days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days*24*60*60*1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Example usage: set a cookie named "visited" for 7 days
+setCookie("visited", "true", 7);
+</script>
+<script>
+// Check if cookies already accepted
+if (document.cookie.split(';').some((item) => item.trim().startsWith('cookies_accepted='))) {
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+
+document.getElementById('accept-cookies').addEventListener('click', function() {
+  document.cookie = "cookies_accepted=true; path=/; max-age=" + 60*60*24*365; // 1 year
+  document.getElementById('cookie-banner').style.display = 'none';
+});
+</script>
 </body>
 </html>
