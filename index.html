@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aurum Nest Properties Ltd</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {margin:0; font-family:'Poppins', sans-serif; background-color:#000; color:#fff;}
     header {display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:#000; position:sticky; top:0; z-index:100;}
@@ -14,43 +15,92 @@
     .hero::after {content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6);}
     .hero h1, .hero p {position:relative; z-index:2;}
     .hero h1 {font-size:3em; color:#d4af37; margin-bottom:10px;}
-    .btn {background:#d4af37; color:#000; padding:12px 30px; border:none; border-radius:30px; font-weight:600; cursor:pointer; transition:0.3s;}
-    .btn:hover {background:#fff;}
+    /* --- GOLD METALLIC BUTTONS WITH SHIMMER --- */
+/* --- GOLD METALLIC BUTTONS WITH SHIMMER, GROW & GLOW --- */
+.btn {
+  background: linear-gradient(135deg, #cdaa2c 0%, #d4af37 40%, #f7e28c 60%, #b6862f 100%);
+  color: #000;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;  /* already present */
+  z-index: 2;          /* ADD THIS */
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.15) 100%);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn:hover::after {
+  animation: shimmer-btn 1.5s forwards;
+  opacity: 1;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); /* stronger glow for hero button */
+}
+
+/* Button shimmer animation */
+@keyframes shimmer-btn {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
     section {padding:80px 10%;}
     h2 {color:#d4af37; margin-bottom:20px;}
     .about {display:flex; gap:40px; flex-wrap:wrap; align-items:center;}
-    .about img {
-  width: 100%;
-  max-width: 280px;
-  border-radius: 10px;
-  height: auto;
-}
+    .about img {width: 100%; max-width: 280px; border-radius: 10px; height: auto;}
     .about div {flex:1;}
+    
+    /* --- HOW WE WORK UPDATED STYLING --- */
+    #approach {background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #1a1a1a 100%);}
     .three-cols {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; text-align:center;}
-    .three-cols div {background:#111; padding:30px; border-radius:10px;}
+    .three-cols div {
+      background: #1a1a1a; /* lighter box */
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 0 15px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .three-cols div:hover {background:#222; transform:translateY(-5px);}
+    .icon-circle {
+      width:80px; height:80px; border-radius:50%;
+      background: linear-gradient(135deg, #cdaa2c 0%, #d4af37 40%, #f7e28c 60%, #b6862f 100%);
+      box-shadow:0 0 15px rgba(212,175,55,0.4);
+      display:flex; align-items:center; justify-content:center;
+      margin:0 auto 20px; color:#fff; font-size:36px;
+      position:relative; overflow:hidden; transition:all 0.4s ease;
+    }
+    .icon-circle::after {
+      content:""; position:absolute; top:-100%; left:-100%;
+      width:200%; height:200%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.15) 100%);
+      transform: translateX(-100%); opacity:0; transition:opacity 0.4s ease;
+    }
+    .three-cols div:hover .icon-circle::after {animation:shimmer 1.5s forwards; opacity:1;}
+    .three-cols div:hover .icon-circle {transform:scale(1.1); box-shadow:0 0 25px rgba(255,215,0,0.6); color:#fffbea;}
+    @keyframes shimmer {0%{transform:translateX(-100%);} 100%{transform:translateX(100%);}}
+
     .investments {display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:30px;}
     .card {background:#111; padding:30px; border-radius:10px;}
     .testimonials {background:#111;}
     .testimonial {margin-bottom:30px; font-style:italic;}
-    .contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 3000px;  /* make form narrower */
-  margin: 0 auto;    /* center the form */
-}
-  input, textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 1em;
-  display: block;
-  background-color: #222;  /* dark background to match brand */
-  color: #fffff;             /* text color white for contrast */
-}
+    .contact form {display:flex; flex-direction:column; gap:15px; max-width:400px; margin:0 auto;}
+    input, textarea {padding:10px; border:none; border-radius:5px; font-family:inherit; font-size:1em; display:block; width:100%; box-sizing:border-box;}
     footer {text-align:center; padding:40px 20px; border-top:1px solid #222; color:#d4af37; font-size:0.9em;}
   </style>
 </head>
@@ -82,12 +132,25 @@
     <img src="team1.jpg" alt="Severine and Mike - Aurum Nest Properties">
   </section>
 
-  <section id="approach" style="background:#111;">
+  <!-- UPDATED 'HOW WE WORK' SECTION -->
+  <section id="approach">
     <h2>How We Work</h2>
     <div class="three-cols">
-      <div><h3>Identify Opportunities</h3><p>We source high-potential properties — often off-market — through trusted relationships and local expertise in the North West region.</p></div>
-      <div><h3>Add Value</h3><p>From light refurbishments to complete transformations, we enhance both the property and its profitability.</p></div>
-      <div><h3>Share Success</h3><p>We structure deals that provide secure, attractive returns for our investors.</p></div>
+      <div>
+        <div class="icon-circle"><i class="fas fa-magnifying-glass"></i></div>
+        <h3>Identify Opportunities</h3>
+        <p>We source high-potential properties — often off-market — through trusted relationships and local expertise in the North West region.</p>
+      </div>
+      <div>
+        <div class="icon-circle"><i class="fas fa-wrench"></i></div>
+        <h3>Add Value</h3>
+        <p>From light refurbishments to complete transformations, we enhance both the property and its profitability.</p>
+      </div>
+      <div>
+        <div class="icon-circle"><i class="fas fa-handshake"></i></div>
+        <h3>Share Success</h3>
+        <p>We structure deals that provide secure, attractive returns for our investors.</p>
+      </div>
     </div>
   </section>
 
@@ -128,5 +191,3 @@
   </footer>
 </body>
 </html>
-
-
